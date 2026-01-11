@@ -20,6 +20,8 @@ header {
     background-color: #2c3e50;
     color: #fff;
     padding: 1rem 0;
+    position: relative;
+    z-index: 2;
 }
 header .container {
     display: flex;
@@ -48,20 +50,36 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Hero Section with background image */
-.hero {
-    background-image: url("https://raw.githubusercontent.com/Shiva3012-sl/My-First-Website/main/030922797522672bc610cd890c155bb9.jpg");
+/* Shared Parallax Section Styles */
+.parallax-section {
+    position: relative;
+    background-attachment: fixed; /* parallax effect */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #fff;
     padding: 4rem 0;
+    color: #fff;
     text-align: center;
+}
+.parallax-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4); /* overlay for readability */
+}
+.parallax-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url("https://raw.githubusercontent.com/Shiva3012-sl/My-First-Website/main/03f32ebe4d98f47bf503966703c97194.jpg");
 }
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* makes text readable on image */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
 }
 .hero p {
     font-size: 1.2rem;
@@ -70,11 +88,9 @@ nav ul li a {
 
 /* Services Section */
 .services {
-    padding: 4rem 0;
-    background-color: #f4f4f4;
+    background-image: url("https://raw.githubusercontent.com/Shiva3012-sl/My-First-Website/main/0a85aa5cf31bf1942a7735d8a66b704a.jpg");
 }
 .services h2 {
-    text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
 }
@@ -84,11 +100,12 @@ nav ul li a {
     gap: 2rem;
 }
 .service {
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.9);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
+    color: #333;
 }
 .service h3 {
     margin-bottom: 1rem;
@@ -96,12 +113,9 @@ nav ul li a {
 
 /* Contact Section */
 .contact {
-    padding: 4rem 0;
-    background-color: #2c3e50;
-    color: #fff;
+    background-image: url("https://raw.githubusercontent.com/Shiva3012-sl/My-First-Website/main/15d1d6676b31693b31c94a8e232a2651.jpg");
 }
 .contact h2 {
-    text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
 }
@@ -134,12 +148,27 @@ nav ul li a {
     background-color: #2980b9;
 }
 
-/* Footer */
+/* Footer Section */
 footer {
-    background-color: #34495e;
+    background-image: url("https://raw.githubusercontent.com/Shiva3012-sl/My-First-Website/main/15d1d6676b31693b31c94a8e232a2651.jpg");
+    background-attachment: fixed; /* parallax */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
     color: #fff;
     text-align: center;
-    padding: 1rem 0;
+    position: relative;
+}
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+footer .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Responsive Design */
